@@ -1,0 +1,15 @@
+<ng-container *ngFor="let item of items">
+  <mat-expansion-panel *ngIf="item.items && item.items.length > 0; else listOnly">
+    <mat-expansion-panel-header [ngClass]="(item.items) ? null: 'onlyHead'">
+      {{ item.label }}
+    </mat-expansion-panel-header>
+    <div *ngIf="item.items">
+      <app-submenu [items]="item.items"></app-submenu>
+    </div>
+  </mat-expansion-panel>
+  <ng-template #listOnly>
+    <li class="w-100 ">
+      <a>{{ item.label }}</a>
+    </li>
+  </ng-template>
+</ng-container>
