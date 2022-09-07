@@ -1,6 +1,6 @@
 <ng-container *ngFor="let item of items">
   <mat-expansion-panel *ngIf="item.items && item.items.length > 0; else listOnly">
-    <mat-expansion-panel-header [ngClass]="(item.items) ? null: 'onlyHead'">
+    <mat-expansion-panel-header>
       {{ item.label }}
     </mat-expansion-panel-header>
     <div *ngIf="item.items">
